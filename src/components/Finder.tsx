@@ -1,5 +1,6 @@
 import Breadcrumbs from "./Breadcrumbs";
 import FinderPanel from "./FinderPanel";
+import { data } from "../data";
 
 const breadcrumbs = [
   'Apple',
@@ -9,6 +10,7 @@ const breadcrumbs = [
 ];
 
 function Finder() {
+  console.log('data: ', data);
   return (
     <div className="finder">
       <Breadcrumbs items={breadcrumbs} />

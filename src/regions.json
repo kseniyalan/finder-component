@@ -1,0 +1,50 @@
+[
+	{
+		"id": 1,
+		"name": "Banskobystrický kraj",
+		"parent_id": 2,
+		"shortcut": "BC"
+	},
+	{
+		"id": 2,
+		"name": "Bratislavský kraj",
+		"parent_id": 1,
+		"shortcut": "BL"
+	},
+	{
+		"id": 3,
+		"name": "Košický kraj",
+		"parent_id": 3,
+		"shortcut": "KI"
+	},
+	{
+		"id": 4,
+		"name": "Nitriansky kraj",
+		"parent_id": 1,
+		"shortcut": "NI"
+	},
+	{
+		"id": 5,
+		"name": "Prešovský kraj",
+		"parent_id": 3,
+		"shortcut": "PV"
+	},
+	{
+		"id": 6,
+		"name": "Trenčiansky kraj",
+		"parent_id": 1,
+		"shortcut": "TC"
+	},
+	{
+		"id": 7,
+		"name": "Trnavský kraj",
+		"parent_id": 1,
+		"shortcut": "TA"
+	},
+	{
+		"id": 8,
+		"name": "Žilinský kraj",
+		"parent_id": 2,
+		"shortcut": "ZI"
+	}
+]
