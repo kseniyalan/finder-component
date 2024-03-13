@@ -24,9 +24,11 @@ export type VillageType = {
 
 export type FinderItemType = {
   id: number,
-  uuid: string,
+  //uuid: string,
   name: string,
-  parent_id: number,
+  parent_id: number | null,
   description: string | null,
   children: FinderItemType[] | null
 }
+
+export type LevelsType = FinderItemType[][];
