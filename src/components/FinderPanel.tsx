@@ -1,10 +1,14 @@
 import Card from "./Card";
+import { FinderItemType } from '../types';
+import classnames from 'classnames';
 
 type Props = {
-  items: string[]
+  items: FinderItemType[],
+  selectedItem?: FinderItemType,
+  onSelect: (item: FinderItemType) => void,
 };
 
-function FinderPanel({ items }: Props) {
+function FinderPanel({ items, selectedItem, onSelect }: Props) {
   return (
     <Card panel>
       <ul className="finder-items">
@@ -13,10 +17,14 @@ function FinderPanel({ items }: Props) {
             <li key={index}>
               <button
                 type="button"
-                className="finder-btn outlined"
-                onClick={() => {}}
+                className={classnames({
+                  'finder-btn': true,
+                  'outlined': true,
+                  'selected': selectedItem?.id === item.id
+                })}
+                onClick={() => onSelect(item)}
               >
-                {item}
+                {item.name}
               </button>
             </li>
           );

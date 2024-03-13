@@ -144,7 +144,8 @@ button.finder-btn {
     border-radius: var(--border-radius);
     padding: 1px 10px;
 
-  &:hover, &:focus, &:focus-visible{
+  &:hover, &:focus, &:focus-visible, &.selected{
+    color: var(--blue-hover);
     border-color: var(--blue-hover);
   }
   }

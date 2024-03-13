@@ -1,10 +1,12 @@
 import Card from "./Card";
+import { FinderItemType } from '../types';
 
 type Props = {
-  items: string[];
+  items: FinderItemType[],
+  onSelect: (item: FinderItemType, level: number) => void,
 };
 
-function Breadcrumbs({ items }: Props) {
+function Breadcrumbs({ items, onSelect }: Props) {
   return (
     <Card>
       <ul className="breadcrumbs">
@@ -14,9 +16,9 @@ function Breadcrumbs({ items }: Props) {
               <button
                 type="button"
                 className="finder-btn"
-                onClick={() => {}}
+                onClick={() => onSelect(item, index)}
               >
-                {item}
+                {item.name}
               </button>
             </li>
           );

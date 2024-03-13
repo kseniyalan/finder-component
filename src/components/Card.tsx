@@ -7,10 +7,10 @@ type Props = {
 };
 
 function Card({ children, panel }: Props) {
-const cardClass = classnames({
-  'card': true,
-  'panel': panel,
-});
+  const cardClass = classnames({
+    'card': true,
+    'panel': panel,
+  });
 
   return (
     <div className={cardClass}>
