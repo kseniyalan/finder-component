@@ -1,12 +1,13 @@
-import AppLayout from "./components/AppLayout"
+import AppLayout from "./components/AppLayout";
+import Finder from "./components/Finder";
 import './assets/styles/index.scss';
-//import './assets/styles/variables.scss';
-
 
 function App() {
   return (
     <AppLayout>
-      <span>Text</span>
+      <div className="content">
+        <Finder />
+      </div>
     </AppLayout>
   )
 }

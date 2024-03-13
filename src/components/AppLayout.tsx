@@ -2,13 +2,17 @@ import { ReactNode } from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
 
-function AppLayout(props: { children: ReactNode }) {
+type Props = {
+  children: ReactNode
+};
+
+function AppLayout({ children }: Props) {
   return (
     <>
       <Header />
       <div className="main">
         <div className="container">
-          {props.children}
+          {children}
         </div>
       </div>
       <Footer />
