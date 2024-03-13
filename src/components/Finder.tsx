@@ -13,9 +13,9 @@ function Finder() {
     <div className="finder">
       <Breadcrumbs items={breadcrumbs} />
       <div className="finder-content">
-        <FinderPanel>zscs</FinderPanel>
-        <FinderPanel>zscs</FinderPanel>
-        <FinderPanel>zscs</FinderPanel>
+        <FinderPanel items={breadcrumbs} />
+        <FinderPanel items={breadcrumbs} />
+        <FinderPanel items={breadcrumbs} />
       </div>
     </div>
   );

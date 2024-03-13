@@ -1,14 +1,27 @@
 import Card from "./Card";
-import { ReactNode } from 'react';
 
 type Props = {
-  children: ReactNode
+  items: string[]
 };
 
-function FinderPanel({ children }: Props) {
+function FinderPanel({ items }: Props) {
   return (
     <Card panel>
-      {children}
+      <ul className="finder-items">
+        {items && items.map((item, index) => {
+          return (
+            <li key={index}>
+              <button
+                type="button"
+                className="finder-btn outlined"
+                onClick={() => {}}
+              >
+                {item}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
     </Card>
   );
 }

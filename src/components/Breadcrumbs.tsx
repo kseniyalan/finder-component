@@ -10,8 +10,14 @@ function Breadcrumbs({ items }: Props) {
       <ul className="breadcrumbs">
         {items && items.map((item, index) => {
           return (
-            <li key={index} className="breadcrumb-item">
-              {item}
+            <li key={index} className="breadcrumb">
+              <button
+                type="button"
+                className="finder-btn"
+                onClick={() => {}}
+              >
+                {item}
+              </button>
             </li>
           );
         })}

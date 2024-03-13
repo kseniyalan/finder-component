@@ -105,33 +105,49 @@ h1{
   }
 }
 
+/* Content items */
+.finder{
+  width: 80%;
+}
+
+.finder-content{
+  position: relative;
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+ul.finder-items{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 /* Button */
-button {
-  font-size: 10px;
+button.finder-btn {
+  display: flex;
+  align-items: center;
+  color: var(--grey);
+  font-size: 16px;
   font-weight: 500;
   color: var(--grey);
-  border: 1px solid;
-  border-color: transparent;
-  border-radius: var(--border-radius);
-  padding: 4px 10px;
   cursor: pointer;
   transition: color var(--transition), border-color var(--transition);
 
   &:hover, &:focus, &:focus-visible{
     color: var(--blue-hover);
+  }
+
+  &.outlined{
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: var(--border-radius);
+    padding: 1px 10px;
+
+  &:hover, &:focus, &:focus-visible{
     border-color: var(--blue-hover);
   }
-}
-
-/* Content items */
-.finder, .finder-content{
-  width: 100%;
-}
-
-.finder-content{
-  display: flex;
-  gap: 2px;
-  margin-top: 2px;
+  }
 }
 
 .card {
@@ -142,14 +158,23 @@ button {
 
 .panel{
   width: 33.33%;
+  min-height: 350px;
+  //overflow: hidden;
+  //overflow-y: scroll;
 }
 
-.breadcrumbs{
+ul.breadcrumbs{
   display: flex;
   align-items: center;
 }
 
-.breadcrumb-item + .breadcrumb-item:before {
+.breadcrumb {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb + .breadcrumb:before {
+  display: block;
   padding: 0 8px;
   content: "/\00a0";
 }
