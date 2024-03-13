@@ -134,7 +134,11 @@ button.finder-btn {
   cursor: pointer;
   transition: color var(--transition), border-color var(--transition);
 
-  &:hover, &:focus, &:focus-visible{
+  &:disabled{
+    cursor: default;
+  }
+
+  &:not(:disabled):hover, &:not(:disabled):focus, &:not(:disabled):focus-visible{
     color: var(--blue-hover);
   }
 
@@ -144,10 +148,12 @@ button.finder-btn {
     border-radius: var(--border-radius);
     padding: 1px 10px;
 
-  &:hover, &:focus, &:focus-visible, &.selected{
-    color: var(--blue-hover);
-    border-color: var(--blue-hover);
-  }
+    &:not(:disabled):hover, &:not(:disabled):focus, &:not(:disabled):focus-visible, &:not(:disabled).selected{
+      color: var(--blue-hover);
+      border-color: var(--blue-hover);
+    }
+
+    
   }
 }
 

@@ -11,7 +11,13 @@ function Finder(): JSX.Element {
   const handleSelectItem = (item: FinderItemType, level: number) => {
     setSelectedItems((selectedItems) => selectedItems.slice(0, level).concat([item]));
   }
+
+  const handleUnselect = (level: number) => {
+    console.log('handleUnselect');
+    setSelectedItems((selectedItems) => selectedItems.slice(0, level));
+  }
   
+  const visibleColumns = 3;
   const columnsData = [];
   let currenData = data;
 
@@ -22,20 +28,25 @@ function Finder(): JSX.Element {
 
   columnsData.push(currenData);
 
+  
+
   return (
     <div className="finder">
       <Breadcrumbs
         items={selectedItems}
+        visibleColumns={visibleColumns}
         onSelect={handleSelectItem}
       />
       <div className="finder-content">
         {columnsData && columnsData.map((column, index) => {
-          return (
+          //3 columns only
+          return index >= (columnsData.length - visibleColumns) && (
             <FinderPanel
               key={index}
               items={column}
               selectedItem={selectedItems[index]}
               onSelect={(item) => handleSelectItem(item, index)}
+              onUnselect={() => handleUnselect(index)}
             />
           );
         })}

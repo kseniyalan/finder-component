@@ -1,17 +1,17 @@
-import Card from "./Card";
 import { FinderItemType } from '../types';
 
 type Props = {
   items: FinderItemType[],
+  visibleColumns: number,
   onSelect: (item: FinderItemType, level: number) => void,
 };
 
-function Breadcrumbs({ items, onSelect }: Props) {
+function Breadcrumbs({ items, visibleColumns, onSelect }: Props) {
   return (
-    <Card>
+    <div className="card">
       <ul className="breadcrumbs">
         {items && items.map((item, index) => {
-          return (
+          return index <= (items.length - visibleColumns) && (
             <li key={index} className="breadcrumb">
               <button
                 type="button"
@@ -24,7 +24,7 @@ function Breadcrumbs({ items, onSelect }: Props) {
           );
         })}
       </ul>
-    </Card>
+    </div>
   );
 }
 
