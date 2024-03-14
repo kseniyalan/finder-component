@@ -262,16 +262,19 @@ input.search-input{
   transition: border-color var(--transition), color var(--transition);
 
   &::-webkit-input-placeholder {
+    font-size: 16px;
     font-weight: 400;
     color: var(--grey);
   }
 
   &::-moz-placeholder {
+    font-size: 16px;
     font-weight: 400;
     color: var(--grey);
   }
 
   &:-ms-input-placeholder {
+    font-size: 16px;
     font-weight: 400;
     color: var(--grey);
   }
@@ -319,15 +322,24 @@ input.search-input{
 .search-top{
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
 }
 
-.search-results{
+.search-panel{
+  height: calc(var(--search-results-height) - var(--cart-padding) * 2);
+}
+
+ul.search-results{
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  height: calc(var(--search-results-height) - var(--cart-padding) * 2);
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-color: var(--scrollbar-thumb-background) var(--scrollbar-background-active);
+  scrollbar-width: thin;
 }
