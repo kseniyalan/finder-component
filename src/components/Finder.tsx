@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-
+import classnames from 'classnames';
 import Breadcrumbs from "./Breadcrumbs";
 import FinderPanel from "./FinderPanel";
 import { data } from "../data";
 import { FinderItemType } from '../types';
+import Search from './Search';
 
 function Finder() {
   const [selectedItems, setSelectedItems] = useState<FinderItemType[]>([]);
-  const [width, setWidth] = useState(window.innerWidth);
 
   const handleSelectItem = (item: FinderItemType, level: number) => {
     setSelectedItems((selectedItems) => selectedItems.slice(0, level).concat([item]));
@@ -28,14 +28,22 @@ function Finder() {
 
   columnsData.push(currenData);
 
+  const contentClass = classnames({
+    'finder-content': true,
+    'one-column': selectedItems.length === 0,
+    'two-columns': selectedItems.length === 1,
+    'three-columns': selectedItems.length >= 2
+  });
+
   return (
-    <div className="finder" >
+    <div className="finder">
+      <Search onSelect={(item) => handleSelectItem(item, 1)} />
       <Breadcrumbs
         items={selectedItems}
         visibleColumns={visibleColumns}
         onSelect={handleSelectItem}
       />
-      <div className="finder-content">
+      <div className={contentClass}>
         {columnsData && columnsData.map((column, index) => {
           //3 columns only
           return index >= (columnsData.length - visibleColumns) && (
