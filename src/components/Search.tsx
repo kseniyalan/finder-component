@@ -30,6 +30,11 @@ function Search({ data, selectedItem, onSelect }: Props) {
     }
   }
 
+  const handleClear = () => {
+    setSearchVal('');
+    setSearchResults([]);
+  }
+
   return (
     <div className="search-wrapper">
       <div className="search">
@@ -37,7 +42,7 @@ function Search({ data, selectedItem, onSelect }: Props) {
           <input
             type="text"
             className="search-input"
-            placeholder="Search by name"
+            placeholder="Region name, code, postal code"
             value={searchVal}
             onChange={(e) => setSearchVal(e.target.value)}
           />
@@ -48,6 +53,13 @@ function Search({ data, selectedItem, onSelect }: Props) {
           >
             Search
           </button>
+          <button
+            type="button"
+            className="search-btn"
+            onClick={() => handleClear()}
+          >
+            Clear
+          </button>
         </div>
         {searchResults.length !== 0 && (
           <div className="card">
@@ -55,17 +67,17 @@ function Search({ data, selectedItem, onSelect }: Props) {
               {searchResults.map((item, index) => {
                 return (
                   <li key={index}>
-              <button
-                type="button"
-                className={classnames({
-                  'finder-btn': true,
-                  'outlined': true,
-                  'selected': selectedItem?.id === item.id
-                })}
-                onClick={() => onSelect(item)}
-              >
-                {item.name}
-              </button>
+                    <button
+                      type="button"
+                      className={classnames({
+                        'finder-btn': true,
+                        'outlined': true,
+                        'selected': selectedItem?.id === item.id
+                      })}
+                      onClick={() => onSelect(item)}
+                    >
+                      {item.name}
+                    </button>
                   </li>
                 );
               })}
