@@ -205,7 +205,7 @@ button.finder-btn {
     border-radius: var(--border-radius);
     padding: 1px 10px;
 
-    &:not(:disabled):hover, &:not(:disabled):focus, &:not(:disabled):focus-visible, &:not(:disabled).selected{
+    &:not(:disabled):hover, &:not(:disabled):focus, &:not(:disabled):focus-visible, &.selected{
       color: var(--blue);
       border-color: var(--blue);
     }
@@ -329,5 +329,5 @@ input.search-input{
 .search-results{
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 6px;
 }

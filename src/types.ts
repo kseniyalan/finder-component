@@ -28,7 +28,8 @@ export type FinderItemType = {
   name: string,
   parent_id: number | null,
   description: string | null,
-  children: FinderItemType[] | null
+  parent?: FinderItemType,
+  children: FinderItemType[]
 }
 
 export type LevelsType = FinderItemType[][];
