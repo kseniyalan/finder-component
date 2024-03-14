@@ -4,6 +4,7 @@ import sass from 'sass'
 
 
 export default defineConfig({
+  //base: '/finder-component/',
   plugins: [react()],
   css: {
     preprocessorOptions: {
