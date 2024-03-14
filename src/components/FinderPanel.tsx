@@ -5,10 +5,11 @@ type Props = {
   items: FinderItemType[],
   selectedItem?: FinderItemType,
   onSelect: (item: FinderItemType) => void,
-  onUnselect: () => void
+  onUnselect: () => void,
 };
 
 function FinderPanel({ items, selectedItem, onSelect, onUnselect }: Props) {
+
   return (
     <div className="card panel" onDoubleClick={onUnselect}>
       <ul className="finder-items">

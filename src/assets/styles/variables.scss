@@ -1,13 +1,17 @@
 :root {
   --blue: #3949AB;
-  --blue-hover: #646cff;
   --grey: #546E7A;
+  --light-grey: #ECEFF1;
 
   --transition: 400ms ease-in;
 
-  --header-desktop-height: 100px;
-  --header-mobile-height: 70px;
+  --header-desktop-height: 80px;
+  --header-mobile-height: 60px;
 
   --border-radius: 8px;
+  --panel-height: 500px;
+  --cart-padding: 10px;
   
+  --scrollbar-thumb-background: var(--light-grey);
+  --scrollbar-background-active: #fff;
 }
