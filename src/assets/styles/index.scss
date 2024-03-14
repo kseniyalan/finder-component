@@ -44,13 +44,7 @@
 }
 
 .content{
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
 
-  @media screen and (min-width: 768px) {
-    margin: 40px 0;
-  }
 }
 
 .header-wrapper{
@@ -109,6 +103,24 @@ h1{
   border: 1px solid var(--grey);
   border-radius: var(--border-radius);
   padding: var(--cart-padding);
+}
+
+.finder-description{
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--grey);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.finder-wrapper{
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 24px 0;
+  }
 }
 
 .finder{
