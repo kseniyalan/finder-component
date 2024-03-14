@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import './App.scss'
+import AppLayout from "./components/AppLayout";
+import Finder from "./components/Finder";
+import './assets/styles/index.scss';
 
 function App() {
-  //const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>My Finder component</div>
-    </>
+    <AppLayout>
+      <div className="content">
+        <Finder />
+      </div>
+    </AppLayout>
   )
 }
 
